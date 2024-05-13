@@ -1,0 +1,351 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(24, 24, 24);
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0px;
+    position:relative;
+     
+    z-index: 2;
+  }
+  
+  .heading {
+    text-align: left;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #000;
+    padding: 10px;
+    font-family: Open Sans;
+    font-weight: bold;
+    font-size: 30px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    padding: 7px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .date-container,
+  .time-container {
+    display: flex;
+    align-items: center;
+    font-family: Open Sans, Bold;
+  }
+  
+  .date-container img,
+  .time-container img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+  
+  .date-input,
+  .time-input {
+    border: none;
+    padding: 1px;
+    font-size: 16px;
+  }
+  
+  .container1 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    margin-top: -20px;
+  }
+  
+  .selected-dishes-heading-container {
+    text-align: left;
+    margin-bottom: 20px;
+    color: #333;
+    margin-top: 20px;
+    margin-left: 50px;
+    
+  }
+  .selected-dishes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    padding-top: 10px;  
+  }
+
+  .img-selected-dishes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-wrapper {
+    position: relative;
+    margin: 0 10px;
+}
+
+.img1 {
+    width: 90px; 
+    height: 90px;
+    border-radius: 30%; 
+    filter: brightness(50%);
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white; /* Set text color */
+    font-size: 14px; /* Set text font size */
+    font-weight: bold; /* Set text font weight */
+}
+
+
+  .img-selected-dishes{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    padding-top: 20px;
+    align-items: flex-end;
+    margin-right: 100px;
+    margin-top: 00px;
+    justify-content: center;
+  }
+  .recommended{
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+    margin-top: 20px;
+    margin-left: 25px;
+  }
+  .img1{
+    border-radius: 50%;
+    width: 100px;
+    border: 3px solid orangered;
+    padding: 3px;
+    opacity: 80%;
+
+  }
+  .slide-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 130px;
+    height: auto;
+    background-color: white;
+    color: gray;
+    border: 2px solid gray;
+    margin-right: 10px;
+    font-weight: bold;
+    font-family: Open Sans;
+    margin-top: 50px;
+  }
+  .background1{
+    background-color: #fff;
+  }
+
+  
+  .slide-btn:hover {
+    color: orange;
+    border: 2px solid orange;
+  }
+  
+  @media (max-width: 768px) {
+    .container1 {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+    .button-container {
+      display: inline-block;
+      float: none;
+    }
+  }
+  
+  .container3 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  
+  .header3 {
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #333;
+  }
+  
+  .container2 {
+    display: flex;
+    justify-content: flex;
+    gap: 10px;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+    padding-top: 30px;
+    align-items: flex-start;
+  }
+  
+  .container2 p {
+    text-align: left;
+    font: normal normal bold 24px Open Sans;
+    letter-spacing: 0.14px;
+    color: #1C1C1C;
+    margin-left: 30px;
+    opacity: 1;
+  }
+  
+  @media (max-width: 767px) {
+    .container2 p {
+      font-size: 17px;
+    }
+  }
+  
+  .background1 {
+    background-color: white;}
+  .background2{
+    background-color: #fff;
+  }
+  div.scroll {
+    margin: 4px, 4px;
+    padding: 4px;
+    height: 280px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    text-align: justify;
+}
+.card-content{
+    display: flex;
+    
+}
+.img2{
+    width: 200px;
+    padding-bottom: 0px;
+    height: 200px;
+}
+.card{
+    flex-direction: row;
+    padding: 10px;
+    margin-block-start: 10px;
+    margin-left: 30px;
+}
+.card-body1{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.btn1{
+    margin-right:50px;
+    z-index: -1;
+}
+.rec-menu{
+    flex-direction: row;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+
+.menu-button {
+  background-color: #0c0c0c; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  margin-right: 30px;
+}
+
+.menu-button:hover {
+  background-color: #808283; 
+}
+
+
+.veg{
+    width:20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+.ico{
+    display: flex;
+}
+.rating{
+    margin-left: 30px;
+    background-color: green;
+    padding: auto;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    justify-content:flex-end;
+    text-align: center;
+    width: 50px;
+    height: 25px;
+
+
+}
+.r1{
+    color: #fff;
+    display:flexbox;
+    justify-content: space-between;
+    padding-top: 5px;
+    padding-left: 2px;
+    font-size: 15px;
+}
+.star1{
+    margin-left: 5px;
+    padding-top: 5px;
+    padding-right:5px;
+
+}
+.ref1{
+    display: flex;
+    padding-top: 10px;
+}
+.refigirator2{
+    padding-left: 20px;
+}
+.ingridients{
+top: 432px;
+left: 250px;
+
+/* UI Properties */
+font: normal normal bold 20px Open Sans;
+letter-spacing: 0.12px;
+color: #1C1C1C;
+opacity: 1;
+margin-left: 30px;
+}
+.ing{
+    font-size: 10px;
+    padding-left: 20px;
+    
+}
+.vl {
+    border-left: 3px solid black;
+    height: 50px;
+    margin-left: 30px;
+  }
+.card-title{
+    font-size: 20px;
+    text-decoration-thickness: 50%;
+}

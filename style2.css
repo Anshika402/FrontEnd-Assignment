@@ -1,0 +1,95 @@
+body{
+    background-color: rgb(173, 172, 172);
+}
+
+.hed{
+    background-color: white;
+    height: 300px;
+}
+.arrow {
+    border: solid black;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 13px;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .cir{
+    border-radius: 50%;
+    background-color: #FFF9F2;
+    width: 400px;
+    height: 400px;
+    float: right;
+    margin-top: 30px;
+  }
+
+  .column {
+    
+    width: 33.33%;
+    padding: 0px;
+    margin-top: -200px;
+    margin-left: 400px;
+  }
+  
+  /* Clearfix (clear floats) */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    
+  }
+  .food{
+    margin-left: 480px;
+    margin-top: 5px;
+    width: 20px;
+    display: block;
+    
+  }
+
+  .main{
+    background-color:white;
+    height:max-content;
+  }
+  
+  .time-container{
+    position: relative;
+    display: inline-block;
+  }
+
+  .icon{
+    padding-left: 50px;
+  }
+
+  .time-input {
+    padding-left: 10px;
+    border: none; 
+    outline: none; 
+    font-weight: 600;
+}
+
+.toggle-content {
+  display: none; 
+}
+
+.toggle-header {
+  cursor: pointer; 
+}
+
+.ticon {
+  margin-left: auto;
+  margin-right: 990px;
+  margin-top: 8px;
+  float: right; 
+}
+
+.ref img{
+  width: auto; 
+  height: 200px; 
+  margin-right: auto; 
+  background-color: #FFF9F2;
+}
