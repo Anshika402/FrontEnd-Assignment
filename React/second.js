@@ -1,132 +1,54 @@
-.container {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    font-style: Open Sans;
+// API endpoint
+const apiUrl = 'https://8b648f3c-b624-4ceb-9e7b-8028b7df0ad0.mock.pstmn.io/dishes/v1/1';
 
+// Function to fetch dish data from API
+async function fetchDishData() {
+  try {
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    populateDishInfo(data);
+  } catch (error) {
+    console.error('Error fetching dish data:', error);
   }
-  
-  .dish-info {
-    flex: 1;
-    padding-right: 20px;
-  }
-  
-  .dish-name {
-    font-size: 28px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    width: 200px;
-  }
-  
-  .rating {
-    color: white;
-    font-size: 18px;
-    background-color: rgb(14, 216, 14);
-  }
-  
-  .dish-description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    max-width: 600px;
-  }
-  
-  .time {
-    font-size: 14px;
-    color: #999;
-  }
-  
-  .dish-image img {
-    max-width: 300px;
-  }
+}
 
-  @media (max-width: 768px) {
-    .dish-image img {
-        max-width: 140px;
-        height: 200px;
+// Function to populate dish information in the HTML
+function populateDishInfo(dishData) {
+  const timeElement = document.querySelector('.time');
+  timeElement.innerHTML = `<i class="fa fa-clock-o"></i> ${dishData.timeToPrepare}`;
 
-        margin-left: -10px;
-      }
-      .dish-image{
-        margin-top: 40%;
-      }
-  }
-  
-/* Existing styles */
-.ingredients-container {
-    max-width: 1500px;
-    padding: 20px;
-    border-radius: 5px;
-    margin-top: 9%;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .ingredients-title {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
-    margin-top: -10%;
-  }
-  
-  .ingredients-subtitle {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .ingredients-group {
-    margin-bottom: 20px;
-  }
-  
-  .ingredients-group-title {
-    font-size: 18px;
-    color: #444;
-    margin-bottom: 10px;
-  }
-  
-  .ingredients-list {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .ingredient-item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 10px;
-  }
-  
-  .ingredient-value {
-    font-weight: bold;
-    color: #333;
-  }
+  const ingredientsGroupsContainer = document.getElementById('ingredients-groups');
 
+  const createIngredientsGroup = (title, ingredients) => {
+    const ingredientsGroup = document.createElement('div');
+    ingredientsGroup.classList.add('ingredients-group');
 
-.icon-container {
-    display: flex;
-    justify-content:space-evenly; 
-  }
-  
-  .icon {
-    text-align: center;
-  }
-  
-  .icon img {
-    width: 50px; 
-  }
-  
-  .icon span {
-    display: block;
-    margin-top: 5px; 
-  }
-  .appliances-container{
-    display: flex;
-    justify-content: center;
-  }
-  
+    const ingredientsGroupTitle = document.createElement('h3');
+    ingredientsGroupTitle.classList.add('ingredients-group-title');
+    ingredientsGroupTitle.textContent = title;
+    ingredientsGroup.appendChild(ingredientsGroupTitle);
+
+    const ingredientsList = document.createElement('ul');
+    ingredientsList.classList.add('ingredients-list');
+
+    ingredients.forEach(ingredient => {
+      const ingredientItem = document.createElement('li');
+      ingredientItem.classList.add('ingredient-item');
+      ingredientItem.textContent = ingredient.name;
+
+      const ingredientValue = document.createElement('span');
+      ingredientValue.classList.add('ingredient-value');
+      ingredientValue.textContent = ingredient.quantity;
+      ingredientItem.appendChild(ingredientValue);
+
+      ingredientsList.appendChild(ingredientItem);
+    });
+
+    ingredientsGroup.appendChild(ingredientsList);
+    ingredientsGroupsContainer.appendChild(ingredientsGroup);
+  };
+  createIngredientsGroup('Vegetables', dishData.ingredients.vegetables);
+  createIngredientsGroup('Spices', dishData.ingredients.spices);
+}
+
+fetchDishData();
